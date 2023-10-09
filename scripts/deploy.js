@@ -5,8 +5,8 @@ async function main() {
   const sample = await ethers.getContractFactory("Sample");
   console.log("Deploying samlpe...");
   const v1contract = await upgrades.deployProxy(sample,[]);
-  await v1contract.waitForDeployment();
-  console.log("Contract deployed to:", await v1contract.getAddress());
+  await v1contract.deployed();
+  console.log("Contract deployed to:", await v1contract.address);
 }
 
 main().catch((error) => {

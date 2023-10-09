@@ -1,31 +1,26 @@
+# Usage
 
-# NVM version tried
-nvm use 16.10.0
+## use node 16.x
 
-# Do npm install --force
+nvm use v16.20.2
 
-# npx hardhat compile
-
-# npx hardhat run scripts/deploy.js --network apothem  or mainnet
-
-You will see the following message & error
-```
-Compiled 1 Solidity file successfully
-Deploying samlpe...
-ProviderError: too many arguments, want at most 1
-
-```
-
-# npx hardhat run scripts/deploy.js --network polygon or fantom
-
-```
-it works fine
-```
-
-# create .env file with following parameters
+## create .env file
 
 ```
 APOTHEM_RPC_URL=https://erpc.apothem.network
-MAINNET_RPC_URL=https://rpc.xinfin.network
-PRIVATE_KEY=ENTER YOUR PRIVATE KEY
+MAINNET_RPC_URL=https://erpc.xinfin.network
+PRIVATE_KEY=<YOUR-PRIVATE-KEY>
+```
+
+## Run below commands
+
+```bash
+npm install
+npx hardhat compile
+
+# for testnet apothem
+npx hardhat run scripts/deploy.js --network apothem
+
+# for mainnet xinfin
+npx hardhat run scripts/deploy.js --network mainnet
 ```
